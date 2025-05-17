@@ -1,20 +1,35 @@
 return {
   {
     "hrsh7th/cmp-nvim-lsp",
+    config = function()
+      require('cmp_nvim_lsp').setup {
+        sources = {
+          { name = 'nvim_lsp' }
+        }
+      }
+    end
   },
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     lazy = false,
     config = function()
       require("mason").setup()
     end,
   },
   {
-    "williamboman/mason-lspconfig.nvim",
+    "mason-org/mason-lspconfig.nvim",
     lazy = false,
-    opts = {
-      auto_install = true,
-    },
+    config = function()
+      require("mason-lspconfig"). setup {
+        automatic_enable = {
+              "lua_ls",
+              "vimls",
+              "solargraph",
+              "html",
+              "elixirls"
+          }
+       }
+    end,
   },
   {
     "neovim/nvim-lspconfig",
@@ -35,7 +50,9 @@ return {
       lspconfig.lua_ls.setup({
         capabilities = capabilities
       })
-
+      lspconfig.elixirls.setup({
+        capabilities = capabilities
+      })
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
       vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})

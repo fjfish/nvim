@@ -1,16 +1,5 @@
 return {
   {
-    "hrsh7th/cmp-nvim-lsp",
-    config = function()
-      require('cmp_nvim_lsp').setup {
-        sources = {
-          { name = 'nvim_lsp' }
-        }
-      }
-    end
-
-  },
-  {
     "mason-org/mason.nvim",
     lazy = false,
     config = function()
@@ -20,16 +9,19 @@ return {
   {
     "mason-org/mason-lspconfig.nvim",
     lazy = false,
+    opts = {
+      auto_install = true,
+    },
     config = function()
-      require("mason-lspconfig"). setup {
+      require("mason-lspconfig").setup {
         automatic_enable = {
-              "lua_ls",
-              "vimls",
-              "solargraph",
-              "html",
-              "elixirls"
-          }
-       }
+          "lua_ls",
+          "vimls",
+          "solargraph",
+          "html",
+          "elixirls"
+        }
+      }
     end,
   },
   {
@@ -61,4 +53,3 @@ return {
     end,
   },
 }
-

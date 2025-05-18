@@ -19,7 +19,8 @@ return {
           "vimls",
           "solargraph",
           "html",
-          "elixirls"
+          "elixirls",
+          "ruby_lsp",
         }
       }
     end,
@@ -44,6 +45,9 @@ return {
         capabilities = capabilities
       })
       lspconfig.elixirls.setup({
+        capabilities = capabilities
+      })
+      lspconfig.ruby_lsp.setup({
         capabilities = capabilities
       })
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})

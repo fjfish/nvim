@@ -19,6 +19,7 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 vim.wo.number = true
 
+-- map %% in command mode to give us current dir of the file
 vim.keymap.set('c', '%%', function()
   if vim.fn.getcmdtype() == ':' then
     return vim.fn.expand('%:h') .. '/'
@@ -26,6 +27,25 @@ vim.keymap.set('c', '%%', function()
     return '%%'
   end
 end, { expr = true, noremap = true })
+
+-- Create scratch buffers
+
+vim.api.nvim_create_user_command('Scratch', function()
+  vim.cmd('belowright split')
+  vim.cmd('enew')
+  vim.bo.buftype = 'nofile'
+  vim.bo.bufhidden = 'hide'
+  vim.bo.swapfile = false
+end, {})
+
+vim.api.nvim_create_user_command('VScratch', function()
+  vim.cmd('belowright vsplit')
+  vim.cmd('enew')
+  vim.bo.buftype = 'nofile'
+  vim.bo.bufhidden = 'hide'
+  vim.bo.swapfile = false
+end, {})
+
 -- Auto-save when leaving a buffer
 vim.api.nvim_create_autocmd("BufLeave", {
   pattern = "*",    -- Apply to all buffers

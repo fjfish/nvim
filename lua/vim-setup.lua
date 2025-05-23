@@ -28,7 +28,7 @@ vim.keymap.set('c', '%%', function()
   end
 end, { expr = true, noremap = true })
 
--- Create scratch buffers
+-- Create markdown scratch buffers
 
 vim.api.nvim_create_user_command('Scratch', function()
   vim.cmd('belowright split')

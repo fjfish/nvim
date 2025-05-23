@@ -36,6 +36,7 @@ vim.api.nvim_create_user_command('Scratch', function()
   vim.bo.buftype = 'nofile'
   vim.bo.bufhidden = 'hide'
   vim.bo.swapfile = false
+  vim.bo.filetype = 'markdown'
 end, {})
 
 vim.api.nvim_create_user_command('VScratch', function()
@@ -44,12 +45,12 @@ vim.api.nvim_create_user_command('VScratch', function()
   vim.bo.buftype = 'nofile'
   vim.bo.bufhidden = 'hide'
   vim.bo.swapfile = false
+  vim.bo.filetype = 'markdown'
 end, {})
 
 -- Auto-save when leaving a buffer
 vim.api.nvim_create_autocmd("BufLeave", {
-  pattern = "*",    -- Apply to all buffers
+  pattern = "*",            -- Apply to all buffers
   command = "silent! wall", -- The command to run (write all modified buffers silently)
   -- Optional: group = "MyAutocmdGroup", -- You can put autocmds in a group for easier management
 })
-

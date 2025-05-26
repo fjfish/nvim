@@ -5,7 +5,6 @@ vim.cmd("set shiftwidth=2")
 vim.cmd("set wildmenu")
 vim.cmd("set wildmode=noselect:full")
 vim.cmd("set wildoptions=fuzzy,pum")
-vim.g.mapleader = " "
 vim.g.background = "light"
 
 vim.opt.swapfile = false

@@ -18,6 +18,6 @@ vim.diagnostic.config({
 -- Keymaps for diagnostics
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic" })
-vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Open diagnostic float" })
-vim.keymap.set("n", "<leader>q", ":lua vim.diagnostic.setqflist()<CR>", { desc = "Populate quickfix with diagnostics" })
+vim.keymap.set("n", "<leader>D", vim.diagnostic.open_float, { desc = "Open diagnostic float" })
+vim.keymap.set("n", "<leader>Q", ":lua vim.diagnostic.setqflist()<CR>", { desc = "Populate quickfix with diagnostics" })
 

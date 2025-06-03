@@ -4,7 +4,9 @@ vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.cmd("set wildmenu")
 vim.cmd("set wildmode=noselect:full")
-vim.cmd("set wildoptions=fuzzy,pum")
+vim.cmd("set wildoptions=fuzzy")
+vim.cmd("set undofile")
+vim.cmd("set undodir=~/.local/share/nvim/undo")
 vim.g.background = "light"
 
 vim.opt.swapfile = false

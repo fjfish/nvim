@@ -1,0 +1,2 @@
+WRN 2026-03-22T16:36:05.388 ?.99845    server_start:193: Failed to start server: operation not permitted: /var/folders/dh/bp9gkp1j4pq6m93j70mggbmh0000gn/T/nvim.francisf/SXA3w8/nvim.99845.0
+WRN 2026-03-22T16:37:00.072 ?.740      server_start:193: Failed to start server: operation not permitted: /var/folders/dh/bp9gkp1j4pq6m93j70mggbmh0000gn/T/nvim.francisf/memIqS/nvim.740.0
